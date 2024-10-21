@@ -26,3 +26,11 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.ReactCrop__crop-selection {
+  border: 2px solid #613099;
+}
+
+.ReactCrop__drag-handle::after {
+  background-color: #613099;
+}

@@ -64,8 +64,8 @@ export default function Home() {
             />
 
             <Step
-              label="3. Share or download"
-              description="Save your spooky creation or share it with friends."
+              label="3. Download and share"
+              description="Save your spooky creation and share it with friends."
               icon={<Share2 className="w-8 h-8 " />}
               bgColor="bg-green-900"
               textColor="text-green-300"
@@ -73,14 +73,84 @@ export default function Home() {
 
             <Step
               label="4. Adjust to your liking (Optional)"
-              description="Refine your creation by adjusting saturation, brightness,
-                filters and more."
+              description="Refine your creation by adjusting saturation, brightness and contrast."
               icon={<Sliders className="w-8 h-8 text-yellow-300-300" />}
               bgColor="bg-yellow-700"
               textColor="text-yellow-200"
             />
           </div>
         </SetionContainer>
+
+        <section className="py-20 text-center bg-gray-900/20 backdrop-blur-lg">
+          <div className="container mx-auto p-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-normal">
+              Gallery of Horrors
+            </h2>
+
+            <div className="max-w-3xl grid gap-4 mx-auto">
+              <div>
+                <Image
+                  className="h-full w-full rounded-lg object-cover"
+                  alt="Example"
+                  src="/img/gallery/sample-4.jpg"
+                  width={800}
+                  height={500}
+                />
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <Image
+                    className="h-full w-full rounded-lg object-cover"
+                    src="/img/gallery/sample-2.jpg"
+                    alt=""
+                    width={800}
+                    height={500}
+                  />
+                </div>
+
+                <div>
+                  <Image
+                    className="h-full w-full rounded-lg object-cover"
+                    src="/img/gallery/sample-3.jpg"
+                    alt=""
+                    width={800}
+                    height={500}
+                  />
+                </div>
+                <div>
+                  <Image
+                    className="h-full w-full rounded-lg object-cover"
+                    src="/img/gallery/sample-1.jpg"
+                    alt=""
+                    width={800}
+                    height={500}
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Image
+                    className="h-full w-full rounded-lg object-cover"
+                    alt="Example"
+                    src="/img/gallery/sample-5.jpg"
+                    width={800}
+                    height={500}
+                  />
+                </div>
+                <div>
+                  <Image
+                    className="h-full w-full rounded-lg object-cover"
+                    alt="Example"
+                    src="/img/gallery/sample-6.jpg"
+                    width={800}
+                    height={500}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <SetionContainer>
           <h2 className="text-3xl md:text-4xl font-bold mb-3 leading-normal">
