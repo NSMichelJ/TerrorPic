@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { CldImage } from "next-cloudinary";
 import { useDropzone } from "react-dropzone";
 import { ArrowLeftIcon, ImageUp } from "lucide-react";
