@@ -7,17 +7,8 @@ import { ArrowLeftIcon, ImageUp } from "lucide-react";
 
 import { uploadFile } from "@/lib";
 import { useUIStore } from "@/storage";
-import useLocalStorage from "../hooks/useLocalStorage";
-
-interface UploadedImage {
-  publidID: string;
-}
 
 export default function MyDropzone() {
-  const [uploadedImages, setUploadedImages] = useLocalStorage<UploadedImage[]>(
-    "terror_pic_uploade_images",
-    []
-  );
   const publicID = useUIStore((state) => state.publicID);
   const appState = useUIStore((state) => state.appState);
 
@@ -28,6 +19,7 @@ export default function MyDropzone() {
     (state) => state.setSelectedBackground
   );
   const setSelectedCostume = useUIStore((state) => state.setSelectedCostume);
+  const addUploadedPhoto = useUIStore((state) => state.addUploadedPhoto);
 
   const onDrop = useCallback(
     async (acceptedFiles: File[]) => {
@@ -37,20 +29,13 @@ export default function MyDropzone() {
           const result = await uploadFile(file);
           setPublicID(result.public_id);
           setAppState("loadedImage");
-
-          const images = [
-            ...uploadedImages,
-            {
-              publidID: result.public_id,
-            },
-          ];
-          setUploadedImages(images);
+          addUploadedPhoto(result.public_id);
         } catch (error) {
           console.log(error);
         }
       }
     },
-    [setPublicID, setAppState, setUploadedImages, uploadedImages]
+    [setPublicID, setAppState, addUploadedPhoto]
   );
 
   const handleSampleSelect = (
