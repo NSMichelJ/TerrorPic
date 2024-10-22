@@ -19,7 +19,7 @@ function ItemSelector({
   return (
     <div className={className}>
       <h3 className="text-lg font-medium mb-2 text-slate-200">{title}</h3>
-      <div className="grid gap-2 grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {items.map((item) => (
           <div
             key={item.name}

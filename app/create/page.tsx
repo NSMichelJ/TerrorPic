@@ -71,47 +71,49 @@ export default function CreatePage() {
         </Link>
       </header>
       <div className="flex flex-1 overflow-hidden">
-        <aside className="w-[18%] min-w-[280px] bg-gray-900 flex flex-col">
+        <aside className="min-w-[150px] max-w-[360px] bg-gray-900 flex flex-col">
           <TransfornSelector onGenerate={handleGenerate} />
         </aside>
 
-        <main className="w-[50%] max-h-full bg-gray-800  overflow-y-auto flex flex-col items-center p-4">
-          <div className="py-16">
-            <MyDropzone />
-          </div>
+        <div className="flex flex-col md:flex-row w-[100%]">
+          <main className="w-full md:w-[60%] h-[50%] md:h-full bg-gray-800 overflow-y-auto flex flex-col items-center p-4">
+            <div className="py-4 md:py-16">
+              <MyDropzone />
+            </div>
 
-          <div className="max-w-lg mx-auto p-5">
-            <PhotoSlider />
-          </div>
-        </main>
+            <div className="max-w-lg mx-auto p-5">
+              <PhotoSlider />
+            </div>
+          </main>
 
-        <aside className="w-[32%] p-6 overflow-y-auto bg-gray-900 border-gray-800 border-l">
-          <div className="flex flex-col justify-center items-center gap-4 mb-4">
-            <h3 className="text-lg text-center font-bold mb-4">Result</h3>
+          <aside className="w-full md:w-[40%] h-[50%] md:h-full p-6 overflow-y-auto bg-gray-900 border-gray-800 border-l">
+            <div className="flex flex-col justify-center items-center gap-4 mb-4">
+              <h3 className="text-lg text-center font-bold mb-4">Result</h3>
 
-            {!imageContent && appState !== "transformingImage" && (
-              <>
-                <div className="animate-bounce">
-                  <svg
-                    className="w-16 h-16"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M12 2a9 9 0 0 0-9 9v11l3-3l3 3l3-3l3 3l3-3l3 3V11a9 9 0 0 0-9-9M9 8a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m6 0a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2"
-                    ></path>
-                  </svg>
-                </div>
+              {!imageContent && appState !== "transformingImage" && (
+                <>
+                  <div className="animate-bounce">
+                    <svg
+                      className="w-16 h-16"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M12 2a9 9 0 0 0-9 9v11l3-3l3 3l3-3l3 3l3-3l3 3V11a9 9 0 0 0-9-9M9 8a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m6 0a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2"
+                      ></path>
+                    </svg>
+                  </div>
 
-                <p>There are no transformations</p>
-              </>
-            )}
-          </div>
+                  <p>There are no transformations</p>
+                </>
+              )}
+            </div>
 
-          {appState === "transformingImage" && <ScaryLoader />}
-          {imageContent && appState === "resultReady" && <ShowResult />}
-        </aside>
+            {appState === "transformingImage" && <ScaryLoader />}
+            {imageContent && appState === "resultReady" && <ShowResult />}
+          </aside>
+        </div>
       </div>
     </div>
   );
