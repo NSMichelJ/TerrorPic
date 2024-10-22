@@ -24,7 +24,7 @@ export default function Home() {
       </header>
 
       <main>
-        <SetionContainer>
+        <SetionContainer className="bg-[url('/img/banner_background.png')] bg-contain bg-center bg-no-repeat">
           <div className=" flex flex-col items-center justify-center h-80">
             <h1 className="text-4xl md:text-6xl font-bold mb-3 leading-normal">
               AI Terror Photo Creator
